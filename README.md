@@ -1,4 +1,4 @@
-# JEI 盔甲纹饰分页 · JEI Armor Trim Tab
+# JEI 盔甲纹饰分离 · JEI Armor Trim Tab
 
 ![封面：锻造台指向哨兵盔甲纹饰模板](artwork/cover.png)
 
