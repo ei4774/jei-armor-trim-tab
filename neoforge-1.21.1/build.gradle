@@ -1,0 +1,47 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.gradle.userdev' version '7.0.192'
+}
+
+group = 'dev.jeiarmortrimtab'
+version = '1.1.0'
+
+base {
+    archivesName = 'jei-armor-trim-tab-1.21.1-neoforge'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    maven { url = 'https://bmclapi2.bangbang93.com/maven/' }
+    maven { url = 'https://maven.neoforged.net/releases' }
+    maven { url = 'https://maven.aliyun.com/repository/public' }
+    maven {
+        url = 'https://maven.blamejared.com'
+        content { includeGroup('mezz.jei') }
+    }
+    mavenCentral()
+}
+
+def jeiVersion = '19.38.0.366'
+def localJei = file(".deps/jei-${jeiVersion}.jar")
+
+dependencies {
+    implementation 'net.neoforged:neoforge:21.1.264'
+    if (localJei.isFile()) {
+        implementation files(localJei)
+    } else {
+        implementation("mezz.jei:jei-1.21.1-neoforge:${jeiVersion}") { transitive = false }
+    }
+}
+
+runs {
+    client {
+        modSource sourceSets.main
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}

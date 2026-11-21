@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,48)"
+license="MIT"
+
+[[mods]]
+modId="jei_armor_trim_tab"
+version="1.1.0"
+displayName="JEI Armor Trim Tab"
+displayTest="IGNORE_ALL_VERSION"
+description='''Moves armor trim recipes into a separate JEI tab next to the Smithing Table. Client-side only.'''
+
+[[dependencies.jei_armor_trim_tab]]
+modId="forge"
+mandatory=true
+versionRange="[47,48)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.jei_armor_trim_tab]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.jei_armor_trim_tab]]
+modId="jei"
+mandatory=true
+versionRange="[15.20.0.106,16)"
+ordering="AFTER"
+side="CLIENT"

@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+group = 'dev.jeiarmortrimtab'
+version = '1.1.0'
+base.archivesName = 'jei-armor-trim-tab-1.20.1-forge'
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            args '-mixin.config=jei_armor_trim_tab.mixins.json'
+            mods {
+                jei_armor_trim_tab { source sourceSets.main }
+            }
+        }
+    }
+}
+
+repositories {
+    maven {
+        url = 'https://maven.blamejared.com'
+        content { includeGroup 'mezz.jei' }
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.10'
+    implementation fg.deobf('mezz.jei:jei-1.20.1-forge:15.20.0.106')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += '-proc:none'
+}
+
+tasks.named('jar', Jar).configure {
+    manifest.attributes('MixinConfigs': 'jei_armor_trim_tab.mixins.json')
+    finalizedBy 'reobfJar'
+}
