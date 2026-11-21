@@ -1,4 +1,4 @@
-# JEI 盔甲纹饰分离 · JEI Armor Trim Tab
+# jei盔甲纹饰配方分离 · JEI Armor Trim Tab
 
 ![封面：锻造台指向哨兵盔甲纹饰模板](artwork/cover.png)
 
@@ -8,10 +8,14 @@
 
 在 [Releases](../../releases) 选择与实例匹配的 JAR，和 JEI 一起放进客户端的 `mods` 目录。服务端无需安装。
 
-| Minecraft | 加载器 | Java | JEI | 源码 |
+| Minecraft | 加载器 | Java | JEI | 发行 / 源码 |
 | --- | --- | --- | --- | --- |
-| 1.20.1 | Forge 47.x | 17 | 15.20.0.106 至 15.x | [forge-1.20.1](forge-1.20.1/) |
-| 1.21.1 | NeoForge 21.1.x | 21 | 19.38.0.366 至 19.x | [neoforge-1.21.1](neoforge-1.21.1/) |
+| 1.20.1 | Forge 47.x | 17 | 15.20.0.106 至 15.x | [发行](../../releases/tag/v1.1.0-forge-1.20.1) · [源码](forge-1.20.1/) |
+| 1.20.1 | Fabric | 17 | 15.20.0.106 至 15.x | [Fabric 发行](../../releases/tag/v1.1.0-fabric-1.20.1) |
+| 1.21.1 | NeoForge 21.1.x | 21 | 19.38.0.366 至 19.x | [发行](../../releases/tag/v1.1.0) · [源码](neoforge-1.21.1/) |
+| 1.21.1 | Fabric | 21 | 19.38.0.366 至 19.x | [Fabric 发行](../../releases/tag/v1.1.0-fabric-1.20.1) |
+
+Fabric 版还需要安装对应游戏版本的 Fabric API。
 
 在 JEI 物品列表中悬停锻造台并按 **U**（默认“查看用途”键）即可查看两个标签。
 
